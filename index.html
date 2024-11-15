@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Bangun Datar Segitiga</title>
+ <style>
+  *{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+.tengah {
+  display: flex;
+  justify-content: center;
+
+}
+.card{
+  weight: 40%;
+  box-shadow: 0 4px 8px 0 rgba(241, 156, 156, 0.521);
+  transition: 0.3s;
+} #txBaru{
+  font-size: 20px;
+}
+.cardbody{
+  padding: 2px 16px ;
+}
+.cardfooter{
+  padding: 8px;
+  background-color: rgba(215, 124, 142, 0.562);
+  display: flex;
+  justify-content: right;
+}
+
+label{
+  font-weight: bold;
+  font-size: 14px;
+}
+input[type=text]{
+  width: 95%;
+  padding: 2px;
+  margin: 8px 0px;
+}
+button{
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(160, 52, 52);
+  color: aliceblue;
+  font-weight: bold;
+  padding: 8px 20px;
+}
+
+ </style>
+</head>
+<body>
+
+<div class="tengah">
+ 
+<div class="card">
+  <h1 id="txBaru">Bangun Datar Segitiga</h1>
+<div class="cardbody">
+<form>
+<label>Nilai Alas/Sisi A (cm)</label>
+<input type="text" name="txSisiA" id="txSisiA">
+<label>Nilai Sisi B (cm)</label>
+<input type="text" name="txSisiB" id="txSisiB">
+<label>Nilai Sisi C (cm)</label>
+<input type="text" name="txSisiC" id="txSisiC">
+<label>Nilai Tinggi (cm)</label>
+<input type="text" name="txTinggi" id="txTinggi">
+</form>  
+
+<div id="txHasil">Nilai Luas dan Keliling</div>
+
+</div>
+
+<div class="cardfooter">
+  <button onclick="pesan()">Hitung Luas dan Keliling</button>
+</div>
+</div>
+</div>
+  
+  <script>
+    function pesan(){
+      let SA = parseFloat(document.getElementById("txSisiA").value); 
+      let SB = parseFloat(document.getElementById("txSisiB").value);
+      let SC = parseFloat(document.getElementById("txSisiC").value);
+      let T = parseFloat(document.getElementById("txTinggi").value);
+
+      // Proses Hitung Luas
+      let Luas = 0.5 * SA * T;
+
+      // Proses Hitung Keliling
+      let Kel = SA + SB + SC;
+      
+      let hsl = "Hitung Luas Segitiga<br>Luas = 1/2 x Alas x Tinggi <br>";
+      hsl += "Luas = 1/2 x " + SA + " x " + T + "<br>";
+      hsl += "Luas = " + Luas + " cm<sup>2</sup><br><br>";
+
+      hsl += "Hitung Keliling Segitiga<br>Keliling = Sisi A + Sisi B + Sisi C<br>";
+      hsl += "Keliling = " + SA + " + " + SB + " + " + SC + "<br>";
+      hsl += "Keliling = " + Kel + " cm";
+
+      document.getElementById("txHasil").innerHTML = hsl;
+    }
+  </script>
+</body>
+</html>
